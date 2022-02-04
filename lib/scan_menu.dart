@@ -19,16 +19,16 @@ class _ScanMenuState extends State<ScanMenu> {
   List? _outputs;
 
   // Function to LoadModel
-  loadModel() async {
-    await Tflite.loadModel(
-        model: 'assets/models/blackpepper_model.tflite',
-        labels: 'assets/labels/blackpepper_labels.txt');
-  }
-  //    loadModel() async {
-  //   //this function loads our model
+  // loadModel() async {
   //   await Tflite.loadModel(
-  //       model: 'assets/model.tflite', labels: 'assets/labels.txt');
+  //       model: 'assets/models/blackpepper_model.tflite',
+  //       labels: 'assets/labels/blackpepper_labels.txt');
   // }
+     loadModel() async {
+    //this function loads our model
+    await Tflite.loadModel(
+        model: 'assets/model.tflite', labels: 'assets/labels.txt');
+  }
 
   //Function to pick Image
   pickImage() async {
