@@ -1,0 +1,5 @@
+0 Anethum graveolens
+1 Carum carvi
+2 Cyminum cuminum
+3 Foeniculum vulgare
+4 Mixed Image
