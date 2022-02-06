@@ -41,13 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {
-                logout(context);
-              },
-              icon: Icon(Icons.logout_rounded))
-        ],
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF135821),
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),

@@ -24,7 +24,7 @@ class _HerbsMenuState extends State<HerbsMenu> {
         children: [
           Container(
             width: double.infinity,
-            height: 180,
+            height: 150,
             decoration: BoxDecoration(
               color: Color(0xFF104E0B),
             ),
@@ -82,124 +82,35 @@ class _HerbsMenuState extends State<HerbsMenu> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ModelTest()),
-                          );
-                          print("pressed");
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Container(
-                            width: 125,
-                            height: 180,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFE2E0E0),
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  color: Color(0xFF222222),
-                                  offset: Offset(1, 1),
-                                  spreadRadius: 0.5,
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/143/600',
-                                    width: 125,
-                                    height: 110,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 15, 0, 0),
-                                  child: Text(
-                                    'Name',
-                                    style: GoogleFonts.poppins(
-                                      textStyle:
-                                          Theme.of(context).textTheme.bodyText1,
-                                      color: Color(0xFF2B2B2B),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                      card_widget(
+                        LabelText: 'Polyalthia longifolia\n(False Asoka)',
+                        ImagePath: 'assets/images/ployalthia_longifolia.jpg',
+                        builder: ModelTest(),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ModelTest()),
-                          );
-                        },
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Container(
-                            width: 125,
-                            height: 180,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFE2E0E0),
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  color: Color(0xFF222222),
-                                  offset: Offset(1, 1),
-                                  spreadRadius: 0.5,
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/143/600',
-                                    width: 125,
-                                    height: 110,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 15, 0, 0),
-                                  child: Text(
-                                    'Name',
-                                    style: GoogleFonts.poppins(
-                                      textStyle:
-                                          Theme.of(context).textTheme.bodyText1,
-                                      color: Color(0xFF2B2B2B),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                      card_widget(
+                        LabelText: 'Saraca asoca\n(Ashoka bark)',
+                        ImagePath: 'assets/images/saraca_asoca.jpg',
+                        builder: ModelTest(),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      card_widget(
+                        LabelText: 'Pergularia daemia\n(False Giloy)',
+                        ImagePath: 'assets/images/giloy.jpg',
+                        builder: ModelTest(),
+                      ),
+                      card_widget(
+                        LabelText: 'Tinospora cordifolia\n(Giloy)',
+                        ImagePath: 'assets/images/giloy.jpg',
+                        builder: ModelTest(),
                       ),
                     ],
                   ),
@@ -208,6 +119,84 @@ class _HerbsMenuState extends State<HerbsMenu> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+
+
+// Card Widget
+
+class card_widget extends StatelessWidget {
+  final String? LabelText;
+  final String? ImagePath;
+  Widget builder;
+  // Function router();
+
+  card_widget(
+      {@required this.LabelText,
+      @required this.ImagePath,
+      required this.builder});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print("pressed");
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => builder),
+        );
+      },
+      child: Material(
+        color: Colors.transparent,
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Container(
+          width: 140,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Color(0xFFE2E0E0),
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 1,
+                color: Color(0xFF222222),
+                spreadRadius: 0.3,
+              )
+            ],
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  ImagePath!,
+                  width: 140,
+                  height: 125,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 15, 0, 0),
+                child: Text(
+                  LabelText!,
+                  style: GoogleFonts.poppins(
+                    textStyle: Theme.of(context).textTheme.bodyText1,
+                    color: Color(0xFF2B2B2B),
+                    fontSize: 13
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

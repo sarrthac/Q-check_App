@@ -26,6 +26,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+      automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF135821),
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
@@ -33,17 +34,17 @@ class _MenuPageState extends State<MenuPage> {
           Padding(
             padding: const EdgeInsets.all(3.0),
             child: IconButton(
-            icon: Icon(
-              Icons.help_outline,
-              size: 40,
+              icon: Icon(
+                Icons.help_outline,
+                size: 40,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HelpInfo()),
+                );
+              },
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HelpInfo()),
-              );
-            },
-        ),
           ),
         ],
       ),

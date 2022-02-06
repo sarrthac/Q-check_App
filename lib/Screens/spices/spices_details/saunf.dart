@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 
-class SpiceInfo extends StatefulWidget {
-  const SpiceInfo({Key? key}) : super(key: key);
+class FoeniculumVulgare extends StatefulWidget {
+  const FoeniculumVulgare({Key? key}) : super(key: key);
 
   @override
-  State<SpiceInfo> createState() => _SpiceInfoState();
+  State<FoeniculumVulgare> createState() => _FoeniculumVulgareState();
 }
 
-class _SpiceInfoState extends State<SpiceInfo> {
+class _FoeniculumVulgareState extends State<FoeniculumVulgare> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +43,10 @@ class _SpiceInfoState extends State<SpiceInfo> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 10),
                   child: Text(
-                    'Test Data',
+                    'Foeniculum Vulgare (Saunf)',
                     style: GoogleFonts.poppins(
                       textStyle: Theme.of(context).textTheme.headline1,
-                      fontSize: 28,
+                      fontSize: 19.0,
                       color: Color(0xFFFFFAFA),
                       fontWeight: FontWeight.w600,
                     ),
@@ -91,39 +91,20 @@ class _SpiceInfoState extends State<SpiceInfo> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 0, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 250,
+                          height: 180,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              color: Colors.black,
+                              color: Color(0xFFFFFAFA),
                               width: 1,
                             ),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-                                child: Text(
-                                  'Developed by',
-                                  style: GoogleFonts.poppins(
-                                    textStyle:
-                                        Theme.of(context).textTheme.bodyText1,
-                                    fontSize: 16,
-                                    color: Color(0xFF135821),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              Image.network(
-                                'https://picsum.photos/seed/556/600',
-                                width: double.infinity,
-                                height: 200,
-                                fit: BoxFit.contain,
-                              ),
-                            ],
+                          child: Image.asset(
+                            'assets/images/foeniculum_vulgare.jpg',
+                            width: double.infinity,
+                            height: 180,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -131,7 +112,7 @@ class _SpiceInfoState extends State<SpiceInfo> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 135,
+                          height: 300,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),
@@ -140,38 +121,18 @@ class _SpiceInfoState extends State<SpiceInfo> {
                               width: 1,
                             ),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-                                child: Text(
-                                  'Supported by',
-                                  style: GoogleFonts.poppins(
-                                    textStyle:
-                                        Theme.of(context).textTheme.bodyText1,
-                                    fontSize: 16,
-                                    color: Color(0xFF135821),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                            child: Text(
+                              'Common name: Fennel, Saunf\nBiological source: Dried ripe fruit\nFamily: Umbelliferae\nMain phytochemical constituent(s): Essential oil (trans-anethole, fenchone, estragole)\nMedicinal uses: In treatment of food poisoning and stomach disorders, to induce menstruation and enhance milk flow in breast-feeding mothers. It is also used as carminative, stimulant, expectorant etc.\nOther uses: As a flavoring agent, a smell as well as an insect repellent. \nMonograph – Foeniculum vulgare [Quality Standards of Indian Medicinal Plants. Published by Indian Council of Medical Research, New Delhi (2015) Vol. 13, pp. 254-63.\n',
+                              textAlign: TextAlign.left,
+                              style: GoogleFonts.poppins(
+                                textStyle:
+                                    Theme.of(context).textTheme.bodyText1,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15, 5, 15, 5),
-                                child: Text(
-                                  'IIY Software Private Limited\nPune - New Delhi - Mohali - Bathinda\nhr@iiysoftware.com\n9464220710',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                    textStyle:
-                                        Theme.of(context).textTheme.bodyText1,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
